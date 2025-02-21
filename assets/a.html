@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- https://cdnjs.com/libraries/github-markdown-css -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.css"
+        integrity="sha512-n5zPz6LZB0QV1eraRj4OOxRbsV7a12eAGfFcrJ4bBFxxAwwYDp542z5M0w24tKPEhKk2QzjjIpR5hpOjJtGGoA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- https://katex.org/docs/browser -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+        integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <!-- https://cdnjs.com/libraries/prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css"
+        integrity="sha512-/mZ1FHPkg6EKcxo0fKXF51ak6Cr2ocgDi5ytaTBjsQZIH/RNs6GF6+oId/vPe3eJB836T36nXwVh/WBl/cWT4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .markdown-body {
+            font-family:
+                -apple-system,
+                Segoe UI,
+                Helvetica,
+                Arial,
+                sans-serif,
+                Apple Color Emoji,
+                Segoe UI Emoji;
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media not print {
+            .markdown-body {
+                padding: 45px;
+            }
+
+            @media (max-width: 767px) {
+                .markdown-body {
+                    padding: 15px;
+                }
+            }
+        }
+
+        .markdown-body pre {
+            white-space: pre-wrap;
+        }
+
+        .markdown-body table {
+            display: table;
+        }
+
+        .markdown-body img[data-align='center'] {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .markdown-body img[data-align='right'] {
+            display: block;
+            margin: 0 0 0 auto;
+        }
+
+        .markdown-body li:has(input[type='checkbox']) {
+            list-style-type: none;
+        }
+
+        .markdown-body li input[type='checkbox'] {
+            margin: 0 0 0 -1.3em;
+        }
+
+        .markdown-body ol ol,
+        .markdown-body ul ol {
+            list-style-type: decimal;
+        }
+
+        .markdown-body ol ol ol,
+        .markdown-body ol ul ol,
+        .markdown-body ul ol ol,
+        .markdown-body ul ul ol {
+            list-style-type: decimal;
+        }
+
+        .markdown-body div.plantuml,
+        .markdown-body div.mermaid,
+        .markdown-body div.vega-lite {
+            display: block;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+    <style></style>
+</head>
+
+<body>
+    <article class="markdown-body">
+        <pre class="front-matter">title: muya
+author: jocs
+</pre>
+        <h1>Inline Format</h1>
+        <p><strong>strong</strong> <em>emphasis</em> <code>inline code</code> &gt; <u>underline</u>
+            <mark>highlight</mark> <ruby>北京<rt>Beijing</rt></ruby> <a href="http://www.baidu.com">Baidu</a>
+            H0<sub>2</sub> X<sup>5</sup></p>
+        <h1>GitHub and Extra
+            Inline format</h1>
+        <p>👨 <del>del</del> <a href="http://google.com">http://google.com</a> <span class="katex"><span
+                    class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span
+                            style="height:0.8889em;vertical-align:-0.1944em;" class="strut"></span><span
+                            class="mord mathnormal">a</span><span style="margin-right:0.2778em;"
+                            class="mspace"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span
+                                        class="thinbox"><span class="rlap"><span
+                                                style="height:0.8889em;vertical-align:-0.1944em;"
+                                                class="strut"></span><span class="inner"><span class="mord"><span
+                                                        class="mrel"></span></span></span><span
+                                                class="fix"></span></span></span></span></span><span
+                                class="mrel">=</span></span><span style="margin-right:0.2778em;"
+                            class="mspace"></span></span><span class="base"><span style="height:0.6944em;"
+                            class="strut"></span><span class="mord mathnormal">b</span></span></span></span></p>
+        <h1>Line Break</h1>
+        <p>soft line break
+            hard line break<br>line end</p>
+        <pre><code>const a = "nice"
+function add(){}
+</code></pre>
+        <pre><code>const b = "foo"
+</code></pre><span class="katex-display"><span class="katex"><span class="katex-mathml"></span><span aria-hidden="true"
+                    class="katex-html"><span class="base"><span style="height:0.8889em;vertical-align:-0.1944em;"
+                            class="strut"></span><span class="mord mathnormal">a</span><span
+                            style="margin-right:0.2778em;" class="mspace"></span><span class="mrel"><span
+                                class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span
+                                                style="height:0.8889em;vertical-align:-0.1944em;"
+                                                class="strut"></span><span class="inner"><span class="mord"><span
+                                                        class="mrel"></span></span></span><span
+                                                class="fix"></span></span></span></span></span><span
+                                class="mrel">=</span></span><span style="margin-right:0.2778em;"
+                            class="mspace"></span></span><span class="base"><span style="height:0.6944em;"
+                            class="strut"></span><span class="mord mathnormal">b</span></span></span></span></span>
+        <div class="mermaid" data-processed="true"><svg aria-roledescription="mindmap" role="graphics-document document"
+                viewBox="5 5 675.6585693359375 675.560302734375" style="max-width: 675.6585693359375px;"
+                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%"
+                id="mermaid-1740042192707">
+                <style>
+                    #mermaid-1740042192707 {
+                        font-family: "trebuchet ms", verdana, arial, sans-serif;
+                        font-size: 16px;
+                        fill: #333;
+                    }
+
+                    #mermaid-1740042192707 .error-icon {
+                        fill: #552222;
+                    }
+
+                    #mermaid-1740042192707 .error-text {
+                        fill: #552222;
+                        stroke: #552222;
+                    }
+
+                    #mermaid-1740042192707 .edge-thickness-normal {
+                        stroke-width: 2px;
+                    }
+
+                    #mermaid-1740042192707 .edge-thickness-thick {
+                        stroke-width: 3.5px;
+                    }
+
+                    #mermaid-1740042192707 .edge-pattern-solid {
+                        stroke-dasharray: 0;
+                    }
+
+                    #mermaid-1740042192707 .edge-pattern-dashed {
+                        stroke-dasharray: 3;
+                    }
+
+                    #mermaid-1740042192707 .edge-pattern-dotted {
+                        stroke-dasharray: 2;
+                    }
+
+                    #mermaid-1740042192707 .marker {
+                        fill: #333333;
+                        stroke: #333333;
+                    }
+
+                    #mermaid-1740042192707 .marker.cross {
+                        stroke: #333333;
+                    }
+
+                    #mermaid-1740042192707 svg {
+                        font-family: "trebuchet ms", verdana, arial, sans-serif;
+                        font-size: 16px;
+                    }
+
+                    #mermaid-1740042192707 .edge {
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .section--1 rect,
+                    #mermaid-1740042192707 .section--1 path,
+                    #mermaid-1740042192707 .section--1 circle,
+                    #mermaid-1740042192707 .section--1 polygon,
+                    #mermaid-1740042192707 .section--1 path {
+                        fill: hsl(240, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section--1 text {
+                        fill: #ffffff;
+                    }
+
+                    #mermaid-1740042192707 .node-icon--1 {
+                        font-size: 40px;
+                        color: #ffffff;
+                    }
+
+                    #mermaid-1740042192707 .section-edge--1 {
+                        stroke: hsl(240, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth--1 {
+                        stroke-width: 17;
+                    }
+
+                    #mermaid-1740042192707 .section--1 line {
+                        stroke: hsl(60, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-0 rect,
+                    #mermaid-1740042192707 .section-0 path,
+                    #mermaid-1740042192707 .section-0 circle,
+                    #mermaid-1740042192707 .section-0 polygon,
+                    #mermaid-1740042192707 .section-0 path {
+                        fill: hsl(60, 100%, 73.5294117647%);
+                    }
+
+                    #mermaid-1740042192707 .section-0 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-0 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-0 {
+                        stroke: hsl(60, 100%, 73.5294117647%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-0 {
+                        stroke-width: 14;
+                    }
+
+                    #mermaid-1740042192707 .section-0 line {
+                        stroke: hsl(240, 100%, 83.5294117647%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-1 rect,
+                    #mermaid-1740042192707 .section-1 path,
+                    #mermaid-1740042192707 .section-1 circle,
+                    #mermaid-1740042192707 .section-1 polygon,
+                    #mermaid-1740042192707 .section-1 path {
+                        fill: hsl(80, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-1 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-1 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-1 {
+                        stroke: hsl(80, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-1 {
+                        stroke-width: 11;
+                    }
+
+                    #mermaid-1740042192707 .section-1 line {
+                        stroke: hsl(260, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-2 rect,
+                    #mermaid-1740042192707 .section-2 path,
+                    #mermaid-1740042192707 .section-2 circle,
+                    #mermaid-1740042192707 .section-2 polygon,
+                    #mermaid-1740042192707 .section-2 path {
+                        fill: hsl(270, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-2 text {
+                        fill: #ffffff;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-2 {
+                        font-size: 40px;
+                        color: #ffffff;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-2 {
+                        stroke: hsl(270, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-2 {
+                        stroke-width: 8;
+                    }
+
+                    #mermaid-1740042192707 .section-2 line {
+                        stroke: hsl(90, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-3 rect,
+                    #mermaid-1740042192707 .section-3 path,
+                    #mermaid-1740042192707 .section-3 circle,
+                    #mermaid-1740042192707 .section-3 polygon,
+                    #mermaid-1740042192707 .section-3 path {
+                        fill: hsl(300, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-3 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-3 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-3 {
+                        stroke: hsl(300, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-3 {
+                        stroke-width: 5;
+                    }
+
+                    #mermaid-1740042192707 .section-3 line {
+                        stroke: hsl(120, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-4 rect,
+                    #mermaid-1740042192707 .section-4 path,
+                    #mermaid-1740042192707 .section-4 circle,
+                    #mermaid-1740042192707 .section-4 polygon,
+                    #mermaid-1740042192707 .section-4 path {
+                        fill: hsl(330, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-4 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-4 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-4 {
+                        stroke: hsl(330, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-4 {
+                        stroke-width: 2;
+                    }
+
+                    #mermaid-1740042192707 .section-4 line {
+                        stroke: hsl(150, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-5 rect,
+                    #mermaid-1740042192707 .section-5 path,
+                    #mermaid-1740042192707 .section-5 circle,
+                    #mermaid-1740042192707 .section-5 polygon,
+                    #mermaid-1740042192707 .section-5 path {
+                        fill: hsl(0, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-5 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-5 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-5 {
+                        stroke: hsl(0, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-5 {
+                        stroke-width: -1;
+                    }
+
+                    #mermaid-1740042192707 .section-5 line {
+                        stroke: hsl(180, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-6 rect,
+                    #mermaid-1740042192707 .section-6 path,
+                    #mermaid-1740042192707 .section-6 circle,
+                    #mermaid-1740042192707 .section-6 polygon,
+                    #mermaid-1740042192707 .section-6 path {
+                        fill: hsl(30, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-6 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-6 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-6 {
+                        stroke: hsl(30, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-6 {
+                        stroke-width: -4;
+                    }
+
+                    #mermaid-1740042192707 .section-6 line {
+                        stroke: hsl(210, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-7 rect,
+                    #mermaid-1740042192707 .section-7 path,
+                    #mermaid-1740042192707 .section-7 circle,
+                    #mermaid-1740042192707 .section-7 polygon,
+                    #mermaid-1740042192707 .section-7 path {
+                        fill: hsl(90, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-7 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-7 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-7 {
+                        stroke: hsl(90, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-7 {
+                        stroke-width: -7;
+                    }
+
+                    #mermaid-1740042192707 .section-7 line {
+                        stroke: hsl(270, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-8 rect,
+                    #mermaid-1740042192707 .section-8 path,
+                    #mermaid-1740042192707 .section-8 circle,
+                    #mermaid-1740042192707 .section-8 polygon,
+                    #mermaid-1740042192707 .section-8 path {
+                        fill: hsl(150, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-8 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-8 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-8 {
+                        stroke: hsl(150, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-8 {
+                        stroke-width: -10;
+                    }
+
+                    #mermaid-1740042192707 .section-8 line {
+                        stroke: hsl(330, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-9 rect,
+                    #mermaid-1740042192707 .section-9 path,
+                    #mermaid-1740042192707 .section-9 circle,
+                    #mermaid-1740042192707 .section-9 polygon,
+                    #mermaid-1740042192707 .section-9 path {
+                        fill: hsl(180, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-9 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-9 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-9 {
+                        stroke: hsl(180, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-9 {
+                        stroke-width: -13;
+                    }
+
+                    #mermaid-1740042192707 .section-9 line {
+                        stroke: hsl(0, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-10 rect,
+                    #mermaid-1740042192707 .section-10 path,
+                    #mermaid-1740042192707 .section-10 circle,
+                    #mermaid-1740042192707 .section-10 polygon,
+                    #mermaid-1740042192707 .section-10 path {
+                        fill: hsl(210, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-10 text {
+                        fill: black;
+                    }
+
+                    #mermaid-1740042192707 .node-icon-10 {
+                        font-size: 40px;
+                        color: black;
+                    }
+
+                    #mermaid-1740042192707 .section-edge-10 {
+                        stroke: hsl(210, 100%, 76.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .edge-depth-10 {
+                        stroke-width: -16;
+                    }
+
+                    #mermaid-1740042192707 .section-10 line {
+                        stroke: hsl(30, 100%, 86.2745098039%);
+                        stroke-width: 3;
+                    }
+
+                    #mermaid-1740042192707 .disabled,
+                    #mermaid-1740042192707 .disabled circle,
+                    #mermaid-1740042192707 .disabled text {
+                        fill: lightgray;
+                    }
+
+                    #mermaid-1740042192707 .disabled text {
+                        fill: #efefef;
+                    }
+
+                    #mermaid-1740042192707 .section-root rect,
+                    #mermaid-1740042192707 .section-root path,
+                    #mermaid-1740042192707 .section-root circle,
+                    #mermaid-1740042192707 .section-root polygon {
+                        fill: hsl(240, 100%, 46.2745098039%);
+                    }
+
+                    #mermaid-1740042192707 .section-root text {
+                        fill: #ffffff;
+                    }
+
+                    #mermaid-1740042192707 .icon-container {
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    #mermaid-1740042192707 .edge {
+                        fill: none;
+                    }
+
+                    #mermaid-1740042192707 .mindmap-node-label {
+                        dy: 1em;
+                        alignment-baseline: middle;
+                        text-anchor: middle;
+                        dominant-baseline: middle;
+                        text-align: center;
+                    }
+
+                    #mermaid-1740042192707 :root {
+                        --mermaid-font-family: "trebuchet ms", verdana, arial, sans-serif;
+                    }
+                </style>
+                <g></g>
+                <g class="mindmap-edges">
+                    <path class="edge section-edge-0 edge-depth-1"
+                        d="M 296.20539799094195,209.60709596828156 L 234.51347535176495,181.6907107823721 L172.821552712588,153.77432559646266">
+                    </path>
+                    <path class="edge section-edge-0 edge-depth-2"
+                        d="M 391.90640966235753,127.53120425661189 L 388.7928361304139,92.50281468573317 L385.67926259847025,57.47442511485444">
+                    </path>
+                    <path class="edge section-edge-0 edge-depth-1"
+                        d="M 321.1347729854559,205.8847946966562 L 351.55291036532344,179.13170298347043 L381.97104774519096,152.37861127028467">
+                    </path>
+                    <path class="edge section-edge-0 edge-depth-0"
+                        d="M 298.35657186824415,292.6778051437501 L 303.00312313168206,261.65173799909604 L307.64967439512,230.625670854442">
+                    </path>
+                    <path class="edge section-edge-1 edge-depth-1"
+                        d="M 371.0257967691528,385.6358130494465 L 438.55833009108756,368.8901677078197 L506.0908634130223,352.144522366193">
+                    </path>
+                    <path class="edge section-edge-1 edge-depth-3"
+                        d="M 441.147321230811,565.3906812902825 L 507.5917191050489,561.1844799097938 L574.0361169792868,556.9782785293052">
+                    </path>
+                    <path class="edge section-edge-1 edge-depth-3"
+                        d="M 433.43945332857743,579.4631669188587 L 449.8283615035052,609.0826324203794 L466.217269678433,638.7020979219">
+                    </path>
+                    <path class="edge section-edge-1 edge-depth-3"
+                        d="M 411.3761124187125,568.772526817819 L 346.9020808127848,579.3758396290115 L282.42804920685705,589.979152440204">
+                    </path>
+                    <path class="edge section-edge-1 edge-depth-2"
+                        d="M 390.73897292144545,492.65474000841226 L 405.20741550071557,522.7376333649762 L419.6758580799857,552.8205267215402">
+                    </path>
+                    <path class="edge section-edge-1 edge-depth-1"
+                        d="M 360.8943190905252,403.57759732820034 L 370.3521280114727,434.1914324911959 L379.8099369324202,464.8052676541914">
+                    </path>
+                    <path class="edge section-edge-1 edge-depth-0"
+                        d="M 305.0431342527883,319.580649953602 L 326.30080898018707,348.37915498891095 L347.5584837075858,377.1776600242199">
+                    </path>
+                    <path class="edge section-edge-2 edge-depth-1"
+                        d="M 160.09937301980932,337.01244113815574 L 134.97260381569686,364.7299510349245 L109.8458346115844,392.4474609316933">
+                    </path>
+                    <path class="edge section-edge-2 edge-depth-1"
+                        d="M 156.7716762340515,319.162643284517 L 113.12079252721668,297.2217568912683 L69.46990882038185,275.28087049801957">
+                    </path>
+                    <path class="edge section-edge-2 edge-depth-0"
+                        d="M 281.29220616696244,309.67898935870403 L 233.1543911393311,316.7057772631559 L185.01657611169975,323.73256516760773">
+                    </path>
+                </g>
+                <g class="mindmap-nodes">
+                    <g transform="translate(253.0828203168802, 288.77903318109895)"
+                        class="mindmap-node section--1 section-root">
+                        <g transform="translate(43.052085876464844, 18.733333015441893)">
+                            <circle r="43.052085876464844" class="node-bkg node-circle" id="node-0"></circle>
+                        </g>
+                        <g transform="translate(43.052085876464844, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">mindmap
+                                        </tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(275.08878735090286, 197.0577767862094)" class="mindmap-node section-0">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h59.56510543823242 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-1"></path>
+                            <line y2="37.466666030883786" x2="69.56510543823242" y1="37.466666030883786" x1="0"
+                                class="node-line-0"></line>
+                        </g>
+                        <g transform="translate(34.78255271911621, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">Origins
+                                        </tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(80.54623563351083, 117.59031176309293)" class="mindmap-node section-0">
+                        <g>
+                            <path d="M0 55 v-50 q0,-5 5,-5 h147.21875 q5,0 5,5 v55 H0 Z" class="node-bkg node-no-border"
+                                id="node-2"></path>
+                            <line y2="60" x2="157.21875" y1="60" x1="0" class="node-line-0"></line>
+                        </g>
+                        <g transform="translate(103.609375, 16.266666984558107)" text-anchor="middle"
+                            dominant-baseline="middle" alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">Long
+                                        </tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            history</tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                        <foreignObject style="text-align: center;margin-top:11.266666984558107px;" height="60"
+                            width="60px">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="icon-container"><i
+                                    class="node-icon-0 fa fa-book"></i></div>
+                        </foreignObject>
+                    </g>
+                    <g transform="translate(332.5157306606278, 123.73896314984768)" class="mindmap-node section-0">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h111.4375 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-3"></path>
+                            <line y2="37.466666030883786" x2="121.4375" y1="37.466666030883786" x1="0"
+                                class="node-line-0"></line>
+                        </g>
+                        <g transform="translate(60.71875, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            Popularisation</tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(280.3616057237351, 15)" class="mindmap-node section-0">
+                        <g>
+                            <path
+                                d="M0 50.06666641235351 v-45.06666641235351 q0,-5 5,-5 h197.9791717529297 q5,0 5,5 v50.06666641235351 H0 Z"
+                                class="node-bkg node-no-border" id="node-4"></path>
+                            <line y2="55.06666641235351" x2="207.9791717529297" y1="55.06666641235351" x1="0"
+                                class="node-line-0"></line>
+                        </g>
+                        <g transform="translate(103.98958587646484, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">British
+                                        </tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            popular</tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            psychology</tspan>
+                                    </tspan>
+                                    <tspan dy="1.1em" y="1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">author
+                                        </tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal"> Tony
+                                        </tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal"> Buzan
+                                        </tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(314.5240027979129, 370.5126107658392)" class="mindmap-node section-1">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h73.88541793823242 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-5"></path>
+                            <line y2="37.466666030883786" x2="83.88541793823242" y1="37.466666030883786" x1="0"
+                                class="node-line-1"></line>
+                        </g>
+                        <g transform="translate(41.94270896911621, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            Research</tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(450.83223753868117, 321.00105842818164)" class="mindmap-node section-1">
+                        <g>
+                            <path
+                                d="M0 50.06666641235351 v-45.06666641235351 q0,-5 5,-5 h129.6354217529297 q5,0 5,5 v50.06666641235351 H0 Z"
+                                class="node-bkg node-no-border" id="node-6"></path>
+                            <line y2="55.06666641235351" x2="139.6354217529297" y1="55.06666641235351" x1="0"
+                                class="node-line-1"></line>
+                        </g>
+                        <g transform="translate(69.81771087646484, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">On
+                                        </tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            effectiveness</tspan>
+                                    </tspan>
+                                    <tspan dy="1.1em" y="1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">and
+                                        </tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            features</tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(293.5239975029866, 460.4035881856688)" class="mindmap-node section-1">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h171.42709350585938 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-7"></path>
+                            <line y2="37.466666030883786" x2="181.42709350585938" y1="37.466666030883786" x1="0"
+                                class="node-line-1"></line>
+                        </g>
+                        <g transform="translate(90.71354675292969, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">On
+                                        </tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            Automatic</tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            creation</tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(400.0548902763986, 547.6050125133999)" class="mindmap-node section-1">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h42.24479293823242 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-8"></path>
+                            <line y2="37.466666030883786" x2="52.24479293823242" y1="37.466666030883786" x1="0"
+                                class="node-line-1"></line>
+                        </g>
+                        <g transform="translate(26.12239646911621, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">Uses
+                                        </tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(507.3538000851885, 537.297281275304)" class="mindmap-node section-1">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h153.30470275878906 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-9"></path>
+                            <line y2="37.466666030883786" x2="163.30470275878906" y1="37.466666030883786" x1="0"
+                                class="node-line-1"></line>
+                        </g>
+                        <g transform="translate(81.65235137939453, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            Creative</tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            techniques</tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(398.5106862614956, 633.0935862964751)" class="mindmap-node section-1">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h139.9375 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-10"></path>
+                            <line y2="37.466666030883786" x2="149.9375" y1="37.466666030883786" x1="0"
+                                class="node-line-1"></line>
+                        </g>
+                        <g transform="translate(74.96875, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            Strategic</tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            planning</tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(189.6893672506602, 573.6800007137393)" class="mindmap-node section-1">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h145.87501525878906 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-11"></path>
+                            <line y2="37.466666030883786" x2="155.87501525878906" y1="37.466666030883786" x1="0"
+                                class="node-line-1"></line>
+                        </g>
+                        <g transform="translate(77.93750762939453, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            Argument</tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">
+                                            mapping</tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(141.91345814708473, 307.16585531432906)" class="mindmap-node section-2">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h46.520835876464844 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-12"></path>
+                            <line y2="37.466666030883786" x2="56.520835876464844" y1="37.466666030883786" x1="0"
+                                class="node-line-2"></line>
+                        </g>
+                        <g transform="translate(28.260417938232422, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">Tools
+                                        </tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(38.28174566961172, 384.8273807246362)" class="mindmap-node section-2">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h112.97917175292969 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-13"></path>
+                            <line y2="37.466666030883786" x2="122.97917175292969" y1="37.466666030883786" x1="0"
+                                class="node-line-2"></line>
+                        </g>
+                        <g transform="translate(61.489585876464844, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">Pen
+                                        </tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal"> and
+                                        </tspan>
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal"> paper
+                                        </tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(15, 249.81099243732373)" class="mindmap-node section-2">
+                        <g>
+                            <path
+                                d="M0 32.466666030883786 v-27.466666030883786 q0,-5 5,-5 h72.13541793823242 q5,0 5,5 v32.466666030883786 H0 Z"
+                                class="node-bkg node-no-border" id="node-14"></path>
+                            <line y2="37.466666030883786" x2="82.13541793823242" y1="37.466666030883786" x1="0"
+                                class="node-line-2"></line>
+                        </g>
+                        <g transform="translate(41.06770896911621, 5)" text-anchor="middle" dominant-baseline="middle"
+                            alignment-baseline="middle" dy="1em">
+                            <g>
+                                <rect class="background"></rect><text y="-10.1">
+                                    <tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan">
+                                        <tspan font-weight="normal" class="text-inner-tspan" font-style="normal">Mermaid
+                                        </tspan>
+                                    </tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg></div>
+        <div class="vega-lite vega-embed" role="graphics-document" aria-roledescription="visualization"
+            aria-label="A basic bar chart example, with value labels shown upon pointer hover."
+            style="cursor: default;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1" class="marks" width="455" height="240" viewBox="0 0 455 240"
+                style="background-color: rgb(255, 255, 255);">
+                <g fill="none" stroke-miterlimit="10" transform="translate(50,16)">
+                    <g class="mark-group role-frame root" role="graphics-object"
+                        aria-roledescription="group mark container">
+                        <g transform="translate(0,0)">
+                            <path class="background" aria-hidden="true" d="M0,0h400v200h-400Z"></path>
+                            <g>
+                                <g class="mark-group role-axis" role="graphics-symbol" aria-roledescription="axis"
+                                    aria-label="X-axis for a discrete scale with 8 values: A, B, C, D, E, ending with H">
+                                    <g transform="translate(0.5,200.5)">
+                                        <path class="background" aria-hidden="true" d="M0,0h0v0h0Z"
+                                            pointer-events="none"></path>
+                                        <g>
+                                            <g class="mark-rule role-axis-tick" pointer-events="none">
+                                                <line transform="translate(28,0)" x2="0" y2="3" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(77,0)" x2="0" y2="3" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(126,0)" x2="0" y2="3" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(175,0)" x2="0" y2="3" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(224,0)" x2="0" y2="3" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(273,0)" x2="0" y2="3" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(322,0)" x2="0" y2="3" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(371,0)" x2="0" y2="3" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                            </g>
+                                            <g class="mark-text role-axis-label" pointer-events="none"><text
+                                                    text-anchor="middle" transform="translate(28,16)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">A</text><text
+                                                    text-anchor="middle" transform="translate(77,16)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">B</text><text
+                                                    text-anchor="middle" transform="translate(126,16)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">C</text><text
+                                                    text-anchor="middle" transform="translate(175,16)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">D</text><text
+                                                    text-anchor="middle" transform="translate(224,16)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">E</text><text
+                                                    text-anchor="middle" transform="translate(273,16)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">F</text><text
+                                                    text-anchor="middle" transform="translate(322,16)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">G</text><text
+                                                    text-anchor="middle" transform="translate(371,16)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">H</text></g>
+                                            <g class="mark-rule role-axis-domain" pointer-events="none">
+                                                <line transform="translate(0,0)" x2="400" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                            </g>
+                                        </g>
+                                        <path class="foreground" aria-hidden="true" d="" pointer-events="none"
+                                            display="none"></path>
+                                    </g>
+                                </g>
+                                <g class="mark-group role-axis" role="graphics-symbol" aria-roledescription="axis"
+                                    aria-label="Y-axis for a linear scale with values from 0 to 100">
+                                    <g transform="translate(0.5,0.5)">
+                                        <path class="background" aria-hidden="true" d="M0,0h0v0h0Z"
+                                            pointer-events="none"></path>
+                                        <g>
+                                            <g class="mark-rule role-axis-tick" pointer-events="none">
+                                                <line transform="translate(0,200)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,180)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,160)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,140)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,120)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,100)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,80)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,60)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,40)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,20)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                                <line transform="translate(0,0)" x2="-2" y2="0" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                            </g>
+                                            <g class="mark-text role-axis-label" pointer-events="none"><text
+                                                    text-anchor="end" transform="translate(-4,203)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">0</text><text
+                                                    text-anchor="end" transform="translate(-4,183)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">10</text><text
+                                                    text-anchor="end" transform="translate(-4,163)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">20</text><text
+                                                    text-anchor="end" transform="translate(-4,143)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">30</text><text
+                                                    text-anchor="end" transform="translate(-4,123)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">40</text><text
+                                                    text-anchor="end" transform="translate(-4,103)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">50</text><text
+                                                    text-anchor="end" transform="translate(-4,83)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">60</text><text
+                                                    text-anchor="end" transform="translate(-4,63.00000000000001)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">70</text><text
+                                                    text-anchor="end" transform="translate(-4,42.99999999999999)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">80</text><text
+                                                    text-anchor="end" transform="translate(-4,22.999999999999996)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">90</text><text
+                                                    text-anchor="end" transform="translate(-4,3)"
+                                                    font-family="Benton Gothic, sans-serif" font-size="11.5px"
+                                                    font-weight="normal" fill="#000" opacity="1">100</text></g>
+                                            <g class="mark-rule role-axis-domain" pointer-events="none">
+                                                <line transform="translate(0,200)" x2="0" y2="-200" stroke="#888"
+                                                    stroke-width="1" opacity="1"></line>
+                                            </g>
+                                        </g>
+                                        <path class="foreground" aria-hidden="true" d="" pointer-events="none"
+                                            display="none"></path>
+                                    </g>
+                                </g>
+                                <g class="mark-rect role-mark" role="graphics-symbol"
+                                    aria-roledescription="rect mark container">
+                                    <path d="M5,144h47v56h-47Z" fill="steelblue"></path>
+                                    <path d="M54,89.99999999999999h47v110.00000000000001h-47Z" fill="steelblue"></path>
+                                    <path d="M103,114.00000000000001h47v85.99999999999999h-47Z" fill="steelblue"></path>
+                                    <path d="M152,17.999999999999993h47v182h-47Z" fill="steelblue"></path>
+                                    <path d="M201,37.999999999999986h47v162h-47Z" fill="steelblue"></path>
+                                    <path d="M250,94h47v106h-47Z" fill="steelblue"></path>
+                                    <path d="M299,162h47v38h-47Z" fill="steelblue"></path>
+                                    <path d="M348,26h47v174h-47Z" fill="steelblue"></path>
+                                </g>
+                                <g class="mark-text role-mark" role="graphics-object"
+                                    aria-roledescription="text mark container"><text text-anchor="middle"
+                                        transform="translate(0,-2)" font-family="sans-serif" font-size="11px"
+                                        fill="#333" fill-opacity="1"></text></g>
+                            </g>
+                            <path class="foreground" aria-hidden="true" d="" display="none"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <form class="vega-bindings"></form>
+        </div>
+        <div class="plantuml"><img
+                src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBCoKnELT2rKt3AJx9IS2mjoKZDAybCJYp9pCzJ24ejB4qjBk42oYde0jM05MDHLLoGdrUSokMGcfS2CXC0">
+        </div>
+        <pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">bar</span><span class="token template-punctuation string">`</span></span>
+</code></pre><span class="katex-display"><span class="katex"><span class="katex-mathml"></span><span aria-hidden="true"
+                    class="katex-html"><span class="base"><span style="height:0.8889em;vertical-align:-0.1944em;"
+                            class="strut"></span><span class="mord mathnormal">a</span><span
+                            style="margin-right:0.2778em;" class="mspace"></span><span class="mrel"><span
+                                class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span
+                                                style="height:0.8889em;vertical-align:-0.1944em;"
+                                                class="strut"></span><span class="inner"><span class="mord"><span
+                                                        class="mrel"></span></span></span><span
+                                                class="fix"></span></span></span></span></span><span
+                                class="mrel">=</span></span><span style="margin-right:0.2778em;"
+                            class="mspace"></span></span><span class="base"><span style="height:0.6944em;"
+                            class="strut"></span><span class="mord mathnormal">b</span></span></span></span></span>
+        <div>
+            foo bar
+        </div>
+
+        <div><video type="video/mp4" src="https://www.runoob.com/try/demo_source/movie.mp4" controls=""></video></div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th align="right">foo</th>
+                    <th>bar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="right">zar</td>
+                    <td>foo|bar</td>
+                </tr>
+            </tbody>
+        </table>
+        <ol start="0">
+            <li>foo
+                bar</li>
+        </ol>
+        <ul>
+            <li>
+                <p>foo bar1</p>
+                <p>foo bar2</p>
+            </li>
+            <li>
+                <p><input type="checkbox" disabled="">
+                    a</p>
+            </li>
+            <li>
+                <p><input type="checkbox" disabled="" checked="">
+                    b</p>
+            </li>
+            <li>
+                <p><input type="checkbox" disabled="">
+                    c</p>
+            </li>
+            <li>
+                <p><input type="checkbox" disabled="">
+                    d</p>
+            </li>
+        </ul>
+        <hr>
+        <blockquote>
+            <p>foo
+                bar</p>
+        </blockquote>
+        <p><img alt="" src="https://jingan2.guankou.net/haopic/jj20/389023/010323033238341796.jpg">IMAGE</p>
+    </article>
+</body>
+<script>
+    // 检查每个列表项是否包含复选框
+    document.querySelectorAll('li').forEach(function(li) {
+        if (li.querySelector('input[type="checkbox"]')) {
+            li.style.listStyleType = 'none'; // 去掉项目符号
+        }
+    });
+</script>
+</html>
