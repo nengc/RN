@@ -23,11 +23,12 @@ jobs:
       - name: Install dependencies
         run: |
           yarn global add expo
+          yarn global add eas-cli
           yarn
 
       - name: Build Android APK
         run: |
-          expo build:android --no-publish --non-interactive
+          eas build --platform android --profile development
 
       - name: Upload APK
         uses: actions/upload-artifact@v4  # 使用最新版本
