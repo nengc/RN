@@ -17,12 +17,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 22.x
           # cache: yarn
 
       - name: Install dependencies
         run: |
-          yarn global add expo-cli
+          yarn global add expo
           yarn
 
       - name: Build Android APK
