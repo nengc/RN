@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           yarn global add expo-cli
-          yarn install
+          yarn
 
       - name: Build Android APK
         run: |
