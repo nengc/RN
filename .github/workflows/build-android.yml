@@ -28,8 +28,6 @@ jobs:
 
       - name: Build Android APK
         run: |
-          # expo build:android --no-publish --non-interactive
-          # eas build --platform android --profile development
           eas build --platform android --local
 
       - name: Upload APK
