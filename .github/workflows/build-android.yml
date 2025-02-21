@@ -29,7 +29,7 @@ jobs:
           expo build:android --no-publish --non-interactive
 
       - name: Upload APK
-        uses: actions/upload-artifact@v3  # 更新为 v3
+        uses: actions/upload-artifact@latest  # 使用最新版本
         with:
           name: android-apk
           path: ./android/app/build/outputs/apk/release/app-release.apk  # 根据你的项目结构调整路径
