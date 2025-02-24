@@ -31,34 +31,34 @@ const MyComponent: React.FC<MyComponentProps> = ({ style,value,height }) => {
 
 export default function TestScreen() {
 
-  const [index, indexLoadingError] = useAssets(
-    require("./../../assets/web/a.html")
-  );
+  // const [index, indexLoadingError] = useAssets(
+  //   require("./../../assets/web/a.html")
+  // );
 
-  const [html, setHtml] = useState("");
+  // const [html, setHtml] = useState("");
 
-  if (index) {
-    readAsStringAsync(index[0].localUri as any).then((data) => {
-        setHtml(data);
-    });
-  }
-
-
-  // const { localUri } = Asset.fromModule(require('./../../assets/web/a.html'));
-  // /* On the webView */
-  // let source1 = {};
-  // if (localUri) {
-  //   let os = Platform.OS.toString();
-  //   if (os === 'android') {
-  //     source1 = {
-  //       uri: localUri.includes('ExponentAsset')
-  //         ? localUri
-  //         : 'file:///android_asset/' + localUri.substr(9),
-  //     }
-  //   }else{
-  //     source1 = require('./../../assets/web/a.html')
-  //   }
+  // if (index) {
+  //   readAsStringAsync(index[0].localUri as any).then((data) => {
+  //       setHtml(data);
+  //   });
   // }
+
+
+  const { localUri } = Asset.fromModule(require('./../../assets/web/a.html'));
+  /* On the webView */
+  let source1 = {} as any;
+  if (localUri) {
+    let os = Platform.OS.toString();
+    if (os === 'android') {
+      source1 = {
+        uri: localUri.includes('ExponentAsset')
+          ? localUri
+          : 'file:///android_asset/' + localUri.substring(9),
+      }
+    }else{
+      source1 = require('./../../assets/web/a.html')
+    }
+  }
 
 
   return (
@@ -81,8 +81,8 @@ export default function TestScreen() {
         <WebView
           originWhitelist={['*']}
           // source={require('./../../assets/a.html')}
-          source={{ html }}
-          // source={source1.uri}
+          // source={{ html }}
+          source={source1}
           style={styles.webview}
           allowFileAccess={true}
           allowUniversalAccessFromFileURLs={true}
