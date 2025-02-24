@@ -1,4 +1,4 @@
-import { Image, StyleSheet,Text, View } from 'react-native';
+import { Image, Platform, StyleSheet,Text, View } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -7,7 +7,7 @@ import { ThemedView } from '@/components/ThemedView';
 import React, { useState } from 'react';
 import WebView from 'react-native-webview';
 import { readAsStringAsync } from "expo-file-system";
-import { useAssets } from "expo-asset";
+import { useAssets,Asset } from "expo-asset";
 
 interface MyComponentProps {
   style?: {}; // 使用问号表示 style 是可选的
@@ -43,6 +43,24 @@ export default function TestScreen() {
     });
   }
 
+
+  // const { localUri } = Asset.fromModule(require('./../../assets/web/a.html'));
+  // /* On the webView */
+  // let source1 = {};
+  // if (localUri) {
+  //   let os = Platform.OS.toString();
+  //   if (os === 'android') {
+  //     source1 = {
+  //       uri: localUri.includes('ExponentAsset')
+  //         ? localUri
+  //         : 'file:///android_asset/' + localUri.substr(9),
+  //     }
+  //   }else{
+  //     source1 = require('./../../assets/web/a.html')
+  //   }
+  // }
+
+
   return (
     // <ParallaxScrollView
     //   headerHeight={0}
@@ -64,8 +82,13 @@ export default function TestScreen() {
           originWhitelist={['*']}
           // source={require('./../../assets/a.html')}
           source={{ html }}
+          // source={source1.uri}
           style={styles.webview}
+          allowFileAccess={true}
+          allowUniversalAccessFromFileURLs={true}
           scalesPageToFit={true} // 适应页面大小
+          onLoad={() => {}}
+          onMessage={(event) => {}}
         />
       </View>
   );
