@@ -6,6 +6,8 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import React, { useState } from 'react';
 import WebView from 'react-native-webview';
+import { readAsStringAsync } from "expo-file-system";
+import { useAssets } from "expo-asset";
 
 interface MyComponentProps {
   style?: {}; // 使用问号表示 style 是可选的
@@ -28,6 +30,19 @@ const MyComponent: React.FC<MyComponentProps> = ({ style,value,height }) => {
 };
 
 export default function TestScreen() {
+
+  const [index, indexLoadingError] = useAssets(
+    require("./../../assets/web/a.html")
+  );
+
+  const [html, setHtml] = useState("");
+
+  if (index) {
+    readAsStringAsync(index[0].localUri as any).then((data) => {
+        setHtml(data);
+    });
+  }
+
   return (
     // <ParallaxScrollView
     //   headerHeight={0}
@@ -47,7 +62,8 @@ export default function TestScreen() {
         <MyComponent height={0}  style={{height:0,color:'red'}} value={'abc'}/>
         <WebView
           originWhitelist={['*']}
-          source={require('./../../assets/a.html')}
+          // source={require('./../../assets/a.html')}
+          source={{ html }}
           style={styles.webview}
           scalesPageToFit={true} // 适应页面大小
         />
