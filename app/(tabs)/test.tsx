@@ -4,7 +4,7 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import WebView from 'react-native-webview';
 import { readAsStringAsync } from "expo-file-system";
 import { useAssets,Asset } from "expo-asset";
@@ -31,35 +31,58 @@ const MyComponent: React.FC<MyComponentProps> = ({ style,value,height }) => {
 
 export default function TestScreen() {
 
-  // const [index, indexLoadingError] = useAssets(
-  //   require("./../../assets/web/a.html")
-  // );
+  const [index, indexLoadingError] = useAssets(
+    require("./../../assets/web/a.html")
+  );
 
-  // const [html, setHtml] = useState("");
+  const [html, setHtml] = useState("");
 
-  // if (index) {
-  //   readAsStringAsync(index[0].localUri as any).then((data) => {
-  //       setHtml(data);
-  //   });
+  if (index) {
+    readAsStringAsync(index[0].localUri as any).then((data) => {
+        setHtml(data);
+    });
+  }
+
+
+  // const { localUri } = Asset.fromModule(require('./../../assets/web/a.html'));
+  // /* On the webView */
+  // let source1 = {} as any;
+  // if (localUri) {
+  //   let os = Platform.OS.toString();
+  //   if (os === 'android') {
+  //     source1 = {
+  //       uri: localUri.includes('ExponentAsset')
+  //         ? localUri
+  //         : 'file:///android_asset/' + localUri.substring(9),
+  //     }
+  //   }else{
+  //     source1 = require('./../../assets/web/a.html')
+  //   }
   // }
 
 
-  const { localUri } = Asset.fromModule(require('./../../assets/web/a.html'));
-  /* On the webView */
-  let source1 = {} as any;
-  if (localUri) {
-    let os = Platform.OS.toString();
-    if (os === 'android') {
-      source1 = {
-        uri: localUri.includes('ExponentAsset')
-          ? localUri
-          : 'file:///android_asset/' + localUri.substring(9),
-      }
-    }else{
-      source1 = require('./../../assets/web/a.html')
-    }
-  }
+    const [assets] = useAssets([require("./../../assets/web/a.html")]);
+    const htmlAsset = assets?.[0];
+    
+    // 使用 useState 来管理 source1
+    // const [source1, setSource1] = useState<any>({});
 
+    // useEffect(() => {
+    //   const { localUri } = Asset.fromModule(require('./../../assets/web/a.html'));
+    //   if (localUri) {
+    //     let os = Platform.OS.toString();
+    //     if (os === 'android') {
+    //       setSource1({
+    //         uri: localUri.includes('ExponentAsset')
+    //           ? localUri
+    //           : 'file:///android_asset/' + localUri.substring(9),
+    //       });
+    //     } else {
+    //       setSource1(require('./../../assets/web/a.html'));
+    //     }
+    //   }
+    // }, []); // 只在组件挂载时执行一次
+  
 
   return (
     // <ParallaxScrollView
@@ -82,7 +105,14 @@ export default function TestScreen() {
           originWhitelist={['*']}
           // source={require('./../../assets/a.html')}
           // source={{ html }}
-          source={source1}
+          source={
+            htmlAsset?.localUri
+              ? {
+                uri:
+                  Platform.OS === "android" ? htmlAsset.localUri : htmlAsset.uri,
+              }
+              : { uri: 'about:blank' }
+          }
           style={styles.webview}
           allowFileAccess={true}
           allowUniversalAccessFromFileURLs={true}
