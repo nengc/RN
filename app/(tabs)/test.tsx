@@ -95,7 +95,9 @@ export default function TestScreen() {
         }
       };
 
-      setupServer().catch(console.error);
+      if (!isServerRunning) {
+        setupServer().catch(console.error);
+      }
 
       console.log(111);
       console.log(assets);

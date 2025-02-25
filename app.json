@@ -35,7 +35,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "./plugins/withCleartextTraffic.ts"
     ],
     "experiments": {
       "typedRoutes": true
