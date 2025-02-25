@@ -12,10 +12,12 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": ["android.permission.READ","android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.myapp"
     },
     "web": {
       "bundler": "metro",
@@ -36,10 +38,6 @@
     ],
     "experiments": {
       "typedRoutes": true
-    },
-    "assetBundlePatterns": ["**/*"],
-    "packagerOpts": {
-      "assetExts": ["html"]
     }
   }
 }

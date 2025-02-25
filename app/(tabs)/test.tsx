@@ -1,4 +1,4 @@
-import { Image, Platform, StyleSheet,Text, View } from 'react-native';
+import { AppState, Image, Platform, StyleSheet,Text, View } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -8,6 +8,11 @@ import React, { useEffect, useState } from 'react';
 import WebView from 'react-native-webview';
 import { readAsStringAsync } from "expo-file-system";
 import { useAssets,Asset } from "expo-asset";
+
+import * as FileSystem from "expo-file-system";
+import { stopServer, startServer } from "expo-static-server";
+import { File, Paths } from 'expo-file-system/next';
+
 
 interface MyComponentProps {
   style?: {}; // 使用问号表示 style 是可选的
@@ -31,58 +36,96 @@ const MyComponent: React.FC<MyComponentProps> = ({ style,value,height }) => {
 
 export default function TestScreen() {
 
-  const [index, indexLoadingError] = useAssets(
-    require("./../../assets/web/a.html")
-  );
+  // const [index, indexLoadingError] = useAssets(
+  //   require("./../../assets/web/a.html")
+  // );
 
-  const [html, setHtml] = useState("");
+  // const [html, setHtml] = useState("");
 
-  if (index) {
-    readAsStringAsync(index[0].localUri as any).then((data) => {
-        setHtml(data);
-    });
-  }
-
-
-  // const { localUri } = Asset.fromModule(require('./../../assets/web/a.html'));
-  // /* On the webView */
-  // let source1 = {} as any;
-  // if (localUri) {
-  //   let os = Platform.OS.toString();
-  //   if (os === 'android') {
-  //     source1 = {
-  //       uri: localUri.includes('ExponentAsset')
-  //         ? localUri
-  //         : 'file:///android_asset/' + localUri.substring(9),
-  //     }
-  //   }else{
-  //     source1 = require('./../../assets/web/a.html')
-  //   }
+  // if (index) {
+  //   readAsStringAsync(index[0].localUri as any).then((data) => {
+  //       setHtml(data);
+  //   });
   // }
 
 
-    const [assets] = useAssets([require("./../../assets/web/a.html")]);
-    const htmlAsset = assets?.[0];
-    
-    // 使用 useState 来管理 source1
-    // const [source1, setSource1] = useState<any>({});
+    console.log(Platform.OS);
+    console.log(Platform.Version);
 
-    // useEffect(() => {
-    //   const { localUri } = Asset.fromModule(require('./../../assets/web/a.html'));
-    //   if (localUri) {
-    //     let os = Platform.OS.toString();
-    //     if (os === 'android') {
-    //       setSource1({
-    //         uri: localUri.includes('ExponentAsset')
-    //           ? localUri
-    //           : 'file:///android_asset/' + localUri.substring(9),
-    //       });
-    //     } else {
-    //       setSource1(require('./../../assets/web/a.html'));
-    //     }
-    //   }
-    // }, []); // 只在组件挂载时执行一次
+    // const [assets] = useAssets([require("./../../assets/web/a.html")]);
+    // const htmlAsset = assets?.[0];
+
+    const [assets, setAssets] = useState<Asset[] | undefined>([]);
+    const [isServerRunning, setIsServerRunning] = useState(false);
+    const [appState, setAppState] = useState(AppState.currentState);
+
+    // 调用 `useAssets` 并获取资源
+    const [assetsLoaded, assetsError] = useAssets([require("./../../assets/web/a.html")]);
   
+  
+    useEffect(() => {
+      // assetsLoaded 存在时才执行后续的操作
+      const setupServer = async () => {
+        if (assetsLoaded) {
+          const root = (FileSystem.documentDirectory || "") + "expo_static_server_root_files";
+  
+          // 使用 Promise.all 等待所有文件复制完成
+          await Promise.all(assetsLoaded.map(file => {
+            const fileName = `${file.name}${file.type ? "." + file.type : ""}`;
+            console.log(file.uri);
+            const htmlFilePath = file.localUri || '';
+            console.log(`${root}/${fileName}`);
+            return FileSystem.copyAsync({
+              from: htmlFilePath,
+              to: `${root}/${fileName}`,
+            });
+          }));
+  
+          // 文件复制完成后启动服务器
+          startServer({
+            port: 8089,
+            host: "127.0.0.1",
+            root: root,
+          })
+          .then(() => {
+            console.log("Static server is running");
+            setIsServerRunning(true);
+          })
+          .catch(console.error);
+        }
+      };
+
+      setupServer().catch(console.error);
+
+      console.log(111);
+      console.log(assets);
+
+      const subscription = AppState.addEventListener("change", nextAppState => {
+        setAppState(nextAppState);
+      });
+  
+      return () => {
+        subscription.remove();
+      };
+    }, [assetsLoaded]);// 依赖于 assetsLoaded 以确保只有加载成功时才执行
+    
+    useEffect(() => {
+      if (appState === 'background' && isServerRunning) {
+        console.log("App is in background, server will continue running.");
+      } else if (appState === 'inactive' && isServerRunning) {
+        console.log("App is inactive, server will continue running.");
+      } else if (appState === 'active' && isServerRunning) {
+        console.log("App is active.");
+      } else if (appState === 'unknown' && isServerRunning) {
+        stopServer()
+        .then(() => {
+          console.log("The static server is stopped");
+          setIsServerRunning(false);
+        })
+        .catch(console.error);
+      }
+    }, [appState, isServerRunning]);
+
 
   return (
     // <ParallaxScrollView
@@ -101,10 +144,10 @@ export default function TestScreen() {
     
     <View style={styles.container}>
         <MyComponent height={0}  style={{height:0,color:'red'}} value={'abc'}/>
-        <WebView
+        {/* <WebView
           originWhitelist={['*']}
-          // source={require('./../../assets/a.html')}
-          // source={{ html }}
+          source={require('./../../assets/a.html')}
+          source={{ html }}
           source={
             htmlAsset?.localUri
               ? {
@@ -119,7 +162,21 @@ export default function TestScreen() {
           scalesPageToFit={true} // 适应页面大小
           onLoad={() => {}}
           onMessage={(event) => {}}
-        />
+        /> */}
+        {isServerRunning ? (
+          <WebView
+            originWhitelist={['*']}
+            source={{ uri: 'http://127.0.0.1:8089/a.html' }}
+            style={styles.webview}
+            allowFileAccess={true}
+            allowUniversalAccessFromFileURLs={true}
+            scalesPageToFit={true}
+            onLoad={() => {}}
+            onMessage={(event) => {}}
+          />
+        ) : (
+          <Text>Loading...</Text>
+        )}
       </View>
   );
 }
