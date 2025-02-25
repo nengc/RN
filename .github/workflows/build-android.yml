@@ -79,14 +79,14 @@ jobs:
         if: steps.node-cache.outputs.cache-hit != 'true'  # 缓存未命中时才安装
         run: yarn install # --frozen-lockfile  # 锁定依赖版本加速安装
 
-      - name: Cache Gradle
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-            android/.gradle
-          key: ${{ runner.os }}-gradle-${{ hashFiles('android/gradle/wrapper/gradle-wrapper.properties') }}
+      # - name: Cache Gradle
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: |
+      #       ~/.gradle/caches
+      #       ~/.gradle/wrapper
+      #       android/.gradle
+      #     key: ${{ runner.os }}-gradle-${{ hashFiles('android/gradle/wrapper/gradle-wrapper.properties') }}
 
       - name: Build Android APK
         run: |
