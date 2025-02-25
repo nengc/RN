@@ -95,7 +95,8 @@ jobs:
           ./gradlew assembleRelease \
             --parallel \          # 启用并行构建
             --build-cache \       # 启用构建缓存
-            --no-daemon # \         # 避免 GitHub Actions 的守护进程冲突
+            --no-daemon \         # 避免 GitHub Actions 的守护进程冲突
+            --stacktrace
             # --warning-mode none  # 禁用非必要警告
 
       - name: Upload APK
