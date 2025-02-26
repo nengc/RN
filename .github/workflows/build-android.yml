@@ -29,9 +29,8 @@ jobs:
       - name: Build Android APK
         run: |
           npx expo prebuild
-          cd android && ./gradlew assembleRelease
-
-
+          cd android && ./gradlew assembleRelease --parallel --build-cache
+            
       - name: Upload APK
         uses: actions/upload-artifact@v4  # 使用最新版本
         with:
