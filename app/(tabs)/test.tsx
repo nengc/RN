@@ -55,7 +55,7 @@ export default function TestScreen() {
     // const [assets] = useAssets([require("./../../assets/web/a.html")]);
     // const htmlAsset = assets?.[0];
 
-    const [assets, setAssets] = useState<Asset[] | undefined>([]);
+/*     const [assets, setAssets] = useState<Asset[] | undefined>([]);
     const [isServerRunning, setIsServerRunning] = useState(false);
     const [appState, setAppState] = useState(AppState.currentState);
 
@@ -126,7 +126,7 @@ export default function TestScreen() {
         })
         .catch(console.error);
       }
-    }, [appState, isServerRunning]);
+    }, [appState, isServerRunning]); */
 
 
   return (
@@ -165,7 +165,7 @@ export default function TestScreen() {
           onLoad={() => {}}
           onMessage={(event) => {}}
         /> */}
-        {isServerRunning ? (
+        {/* {isServerRunning ? (
           <WebView
             originWhitelist={['*']}
             source={{ uri: 'http://127.0.0.1:8089/a.html' }}
@@ -178,7 +178,18 @@ export default function TestScreen() {
           />
         ) : (
           <Text>Loading...</Text>
-        )}
+        )} */}
+
+          <WebView
+            originWhitelist={['*']}
+            source={{ uri: 'http://127.0.0.1:8089/a.html' }}
+            style={styles.webview}
+            allowFileAccess={true}
+            allowUniversalAccessFromFileURLs={true}
+            scalesPageToFit={true}
+            onLoad={() => {}}
+            onMessage={(event) => {}}
+          />
       </View>
   );
 }
